@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ViewModels="clr-namespace:MauiPlayground.ViewModels"
+             x:Class="MauiPlayground.MainPage"
+			 x:DataType="ViewModels:CountViewModel">
+    
+    <ContentPage.BindingContext>
+        <ViewModels:CountViewModel />
+    </ContentPage.BindingContext>
+    
+    <StackLayout>
+        <Label  Text="{Binding DisplayCount}"
+                Grid.Row="2"
+                FontSize="18"
+                FontAttributes="Bold"
+                HorizontalOptions="Center" />
+        
+        <Button Text="Click me"
+                FontAttributes="Bold"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Command="{Binding IncreaseCount}"
+                HorizontalOptions="Center" />
+        
+    </StackLayout>
+</ContentPage>
